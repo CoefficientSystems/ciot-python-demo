@@ -35,7 +35,7 @@ def execute_query(query, client, project_id, dataset_id, destination_table):
     """Execute query into destination table."""
     # Get references to the dataset & table
     dataset = client.get_dataset(
-        bigquery.DatasetReference(project=project_id, dataset_id=dataset_id)
+        bigquery.DatasetReference(project=project_id, dataset_id=dataset_id),
     )
     table = dataset.table(destination_table)
     # Construct job config
